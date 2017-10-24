@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="utstyr.css">
+    <script src="https://get.mavo.io/mavo.js"></script>
+    <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
@@ -40,7 +43,13 @@
             </p>
         </div>
         <div>
-
+            <div id="box">
+                <div mv-app="mavoTest" mv-storage="local">
+                    <p class="text">Desimal:</p>
+                    <p><input type="number" property="desimalValue" value="13" datatype="number" mv-mode="edit"></p>
+                    <p>Hexdesimal-verdien for desimal tallet vil da bli: <br>"<span>[desimalValue.toString(16)]</span>"</p>
+                </div>
+        </div>
         </div>
     </div>
 </body>
