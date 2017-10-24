@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://get.mavo.io/mavo.js"></script>
+    <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+    <link rel="stylesheet" href="todo.css">
+</head>
+
+<body>
+    <div id="title">
+        To do
+    </div>
+    <div id="innhold" mv-app="mavoTest" mv-storage="local">
+        Navn:
+        <span property="firstName">Fornavn</span>
+        <span property="last_name">Etternavn</span>
+        <br> Gjøremål:
+        <p><strong>[count(done)]</strong> gjøremål gjort ut av <strong>[count(oppgave)]</strong> total</p>
+        <table>
+            <tr property="oppgave" mv-multiple>
+                <td><span><input property="done" type="checkbox"></span>
+                    <input property="" type="checkbox"></td>
+                <td><span property="taskTitle">Gjøremål</span></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
