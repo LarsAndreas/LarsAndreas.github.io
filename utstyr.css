@@ -6,6 +6,7 @@
 
 html {
     background-color: darkslategray;
+    font-size: calc(var(--size-of-div) / 20)  
 }
 #main {
         /*flex*/
@@ -15,9 +16,6 @@ html {
         justify-content: space-between;
 }
 
-#main div p, #main section p {
-font-size: calc(var(--size-of-div) / 20)    
-}
 
 #main div, #main section {
 
