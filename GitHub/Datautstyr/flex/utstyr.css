@@ -1,0 +1,58 @@
+:root {
+    --size-of-div: 20;
+    --padding-size: calc(var(--size-of-div) * 1.5);
+}
+
+
+html {
+    background-color: darkslategray;
+}
+#main {
+        /*flex*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+}
+
+#main div p, #main section p {
+font-size: calc(var(--size-of-div) / 20)    
+}
+
+#main div, #main section {
+
+    /*looks*/
+    background: aliceblue;
+    width: calc(var(--size-of-div) * 1.5em - var(--padding-size) * 1px);
+    height: calc(var(--size-of-div) * 1em  - var(--padding-size) * 1px);
+    margin: 1em;
+    border: 0.1em solid black;
+    border: 2px solid black;
+    border-radius: 50px;
+    position: relative; 
+    padding-top: calc(var(--padding-size) * 1px);
+    padding-left: calc((var(--padding-size) * 1px) / 4);
+    padding-right: calc((var(--padding-size) * 1px) / 4);
+}
+
+.grid {
+    /*grid*/
+    display: grid;
+    grid-template-columns: repeat(2, calc(100% / 2));
+    grid-template-rows: repeat(3, calc(100% / 3));
+    grid-template-areas: "forste forste"
+                         "andre andre"
+                         "tredje tredje";
+    grid-gap: 2%;
+  }
+.grid > forste {
+grid-area: forste;
+}
+.grid > andre {
+grid-area: andre;
+}
+.grid > tredje {
+grid-area: tredje;
+}
+
+
