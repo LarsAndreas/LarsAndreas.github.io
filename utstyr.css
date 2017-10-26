@@ -1,5 +1,5 @@
 :root {
-    --size-of-div: 10;
+    --size-of-div: 20;
     --padding-size: calc(var(--size-of-div) * 1.5);
 }
 
