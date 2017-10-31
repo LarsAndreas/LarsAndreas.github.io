@@ -5,8 +5,7 @@
 
 
 html {
-    background-color: darkslategray;
-    font-size: calc(var(--size-of-div) / 20)  
+    background-color: darkslategray; 
 }
 #main {
         /*flex*/
@@ -31,6 +30,8 @@ html {
     padding-top: calc(var(--padding-size) * 1px);
     padding-left: calc((var(--padding-size) * 1px) / 4);
     padding-right: calc((var(--padding-size) * 1px) / 4);
+    font: helvetica;
+    font-size: calc(var(--size-of-div) / 20em) 
 }
 
 .grid {

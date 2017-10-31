@@ -1,0 +1,21 @@
+html {
+    background: lightseagreen;
+}
+
+div {
+    /*position*/
+    position: absolute;
+   width: 50%;
+   height: 50%;
+   top: 20%;
+   right: 25%;
+   bottom: 25%;
+   left: 20%;
+    /*style*/
+    background: aliceblue;
+    color: darkblue;
+    font-size: 2em;
+    border-radius: 5%;
+    border: 10px solid darkblue;
+    text-align: center;
+}
