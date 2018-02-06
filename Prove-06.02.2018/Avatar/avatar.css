@@ -1,0 +1,77 @@
+h1:nth-of-type(1) {
+    padding-left: 70px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: aliceblue;
+    text-shadow: 1px 2px 4px #000000;
+}
+
+#avatar {
+    position: relative;
+    width: 480px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(10px,auto);
+    background-repeat: no-repeat;
+}
+
+#avatar div:nth-of-type(1) {
+    background-image: url(Bilder/aa00.png)
+}
+
+#avatar div:nth-of-type(2) {
+    background-image: url(Bilder/aa01.png)
+}
+
+#avatar div:nth-of-type(3) {
+    background-image: url(Bilder/aa02.png)
+}
+
+#avatar div:nth-of-type(4) {
+    background-image: url(Bilder/aa03.png)
+}
+
+#avatar div:nth-of-type(5) {
+    background-image: url(Bilder/aa04.png)
+}
+
+#avatar div:nth-of-type(6) {
+    background-image: url(Bilder/aa05.png)
+}
+
+#avatar div:nth-of-type(7) {
+    background-image: url(Bilder/aa06.png)
+}
+
+#avatar div:nth-of-type(8) {
+    background-image: url(Bilder/aa07.png)
+}
+
+#avatar div:nth-of-type(9) {
+    background-image: url(Bilder/aa08.png)
+}
+
+#avatar div:nth-of-type(10) {
+    background-image: url(Bilder/aa09.png)
+}
+
+#avatar div:nth-of-type(11) {
+    background-image: url(Bilder/aa10.png)
+}
+
+#avatar div:nth-of-type(12) {
+    background-image: url(Bilder/aa11.png)
+}
+#avatar div:nth-of-type(13) {
+    background-image: url(Bilder/aa12.png)
+}
+#avatar div:nth-of-type(14) {
+    background-image: url(Bilder/aa13.png)
+}
+#avatar div:nth-of-type(15) {
+    background-image: url(Bilder/aa14.png)
+}
+#avatar div:nth-of-type(16) {
+    background-image: url(Bilder/aa15.png)
+}
