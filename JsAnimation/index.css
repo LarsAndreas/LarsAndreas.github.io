@@ -1,0 +1,28 @@
+body {
+    background-color: lightslategray;
+    overflow: hidden;
+}
+
+#box {
+    position: absolute;
+    background-color: darkorchid;
+    left: calc((75vw - 5px) / 2);
+    top: calc((100vh - 25vw - 5px) / 2) ;
+    width: 25vw;
+    height: 25vw;
+    transform-origin: center center;
+    transform: rotate(0);
+    will-change: transform, color;
+    border: 5px solid black;
+}
+#dot {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    border: 5px solid red;
+    padding-top: -5px;
+    padding-left: -5px;
+}

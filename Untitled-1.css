@@ -1,0 +1,84 @@
+.line {
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+body {
+    background-color: rgb(0, 124, 133);
+}
+
+#liste {
+    position: absolute;
+    left: 10vw;
+    top: 10vh;
+    width: 300px;
+    height: 670px;
+    text-align: center;
+    background-color: darkorchid;
+    font-size: 2.5em;
+    border: 5px solid darkmagenta;
+    border-radius: 2%;
+    margin-top: -10px;
+    margin-left: -10px
+}
+#space, #place {
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    left: 35vw;
+    background-color: darkmagenta;
+    border: 1px solid cyan;
+}
+#space {
+    top: 20vh;
+}
+#place {
+    top: 50vh;
+}
+.spaceup,.spacedown,.placeup,.placedown {
+    width: 90%;
+    height: 40%;
+    position: absolute;
+    background-color: rgba(139, 0, 42, 0.404);
+    border: 1px solid rgb(0, 0, 0);
+    left: 5%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.spaceup {
+    top: 10%;
+}
+.spacedown {
+    top: 50%;
+}
+.placeup {
+    top: 10%;
+}
+.placedown {
+    top: 50%;
+}
+
+#inputformula {
+    position: absolute;
+    width: 25vw;
+    height: calc(5vh - 1px);
+    left: 35vw;
+    border-left: 1px solid cyan;
+    border-right: 1px solid cyan;
+    top: calc(45vh + 1px);
+    background-color: lightseagreen;
+}
+#formula {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+    background-color: purple;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 2em;
+    text-align: center;
+}

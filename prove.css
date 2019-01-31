@@ -1,0 +1,58 @@
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    #main div {
+    position: relative;
+    top: 12vh;
+    width: 20em;
+    height: 20em;
+    margin: 1em;
+    border: 3px solid darkblue;
+    border-radius: 1%;
+    }
+
+.change {
+    width: 100%;
+    height: 100%;
+    }
+#bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 12vh;
+    background: red;
+    font-size: 10vh;
+}
+
+
+#logo {
+    width:12.5vw; 
+    height:10vh;
+    padding-left: 2vw;
+    padding-top: 1vh;
+}
+#bestil {
+    position: relative;
+    top: 20vh;
+    left: auto;
+    border: 2px solid black;
+    width: 21vw;
+    height: auto;
+    padding: 1vw;
+}
+#main div p {
+    position: absolute;
+    top: auto;
+    left: auto;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: darkblue;
+    text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+    border: 3px solid darkblue;
+    border-radius: 10%;
+    padding: 3px;
+}

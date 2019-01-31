@@ -1,0 +1,10 @@
+div p, div p table {
+    background: darkslateblue;
+    color: white;
+    border: 5px solid darkblue;
+    border-radius: 4%;
+    padding-left: 7%;
+    padding-top: 4%;
+    overflow: auto;
+
+}

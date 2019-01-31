@@ -1,0 +1,160 @@
+body {
+    background: rgb(1, 2, 17);
+    z-index: -999999;
+    overflow: hidden;
+}
+
+#bakke {
+    background-image: url(Snow.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    width: 105vw;
+    height: 20vh;
+    overflow: hidden;
+    z-index: 4;
+}
+
+@keyframes move-julenisse {
+    0%   {left: -50%; top: -20vw;}
+    100%  {left: 175%; top: 50vw;}
+}
+.Julenisse{
+    background-image: url(julenisse.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    top: 10vh;
+    animation-duration: 10s;
+    animation-name: move-julenisse;
+    animation-iteration-count: infinite;
+    z-index: 3;
+}
+
+#mountian {
+    background-image: url(mountian.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    transform: rotate(180deg);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 30vw;
+    height: 90vh;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+.powder,
+.snow {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+    animation: dale 5s linear infinite;
+    animation-fill-mode: forwards;
+    z-index: 8;
+}
+.powder {
+    top: 300px;
+    animation: fyke 5s linear infinite;
+}
+@keyframes dale {
+    0% { top: 0px;    }
+    100% { top: 90vh;     }
+  }
+  @keyframes drop {
+    0% { top: 100px;    }
+    100% { top: 80vh;     }
+  }
+  @keyframes fyke {
+      0% {left: 80px; top:300px }
+      100% {left: 90vw; top: 500px;}
+  }
+
+@keyframes northstar {
+    0% {opacity: 0.8; filter: brightness(75%); filter: drop-shadow(1px 1px 1px aliceblue );}
+    100% {opacity: 1; filter: brightness(75%); filter: drop-shadow(1px 1px 100px aliceblue );}
+}
+#northstar {
+    background-image: url(nordstar.png);
+    top: 5em;
+    right: 5em;
+    width: 15em;
+    height: 15em;
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    animation: northstar 4s alternate-reverse infinite;
+}
+#juletre {
+    background-image: url(juletre.png);
+    bottom: 2em;
+    right: -4em;
+    width: 15em;
+    height: 20em;
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    filter: contrast(100%)
+}
+#juletre:hover {
+    background-image: url(juletre.png);
+    filter: contrast(120%)
+}
+
+#sky {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-gap: 40px;
+    grid-auto-rows: minmax(40px, auto);
+  }
+
+.star {
+    position:relative;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background-image: url("");
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate();
+    filter: opacity(50%);
+    animation: glow 3s ease-in-out infinite;
+    animation-delay: 100s;
+}
+
+@keyframes glow {
+    0% {filter: brightness(100%)}
+    1% {filter: brightness(0%)}
+    2% {filter: brightness(100%)}
+    100% {filter: brightness(100%)}
+
+}
+
+.pakke {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 8px;
+    height: 30px;
+    background-color: red;
+    border-left: solid green 21px;
+    border-right: solid green 21px;
+    animation: drop 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+

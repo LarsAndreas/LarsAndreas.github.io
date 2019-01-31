@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="stylesheet" href="prove.css">
+</head>
+
+<body>
+<div>
+    <p><b>Datamaskiner bruker binærtall internt (CPU bruker binærtall)</b> <br><br>
+    
+    Et binærtall slik som 11011011 kan konverteres til desimal slik:<br><br>
+    
+    128	64	32	16	8	4	2	1<br>
+    1	1	0	1	1	0	1	1
+    <br><br>
+    
+    Summer 128+64+16+8+2+1 (der hvor binærtallet har siffer 1).<br><br>
+    
+    Et binærtall kan konverteres til hex på denne måten:<br>
+    
+      Grupper binærtallet i grupper på 4 bits (1 bit er et binært siffer, 0 eller 1)<br><br>
+    
+      Skriv over tallfølgen 8 4 2 1 ( som vi gjør for konvertering til desimal)<br><br>
+    
+      For hver gruppe på 4 bits får vi da et hexadesimalt siffer<br><br>
+    
+      0-9 er uendra, 10=A,11=B, ... 15=F<br><br>
+    
+    Eksempel:<br><br>
+    
+    8	4	2	1<br>
+    1	1	0	1
+    <br><br>
+    
+    Tallverdien blir 8+4+1 = 13, 13 = D<br><br>
+    
+     
+    
+    Som nevnt kalles 1 binært siffer for en bit.<br><br>
+    
+    8 bits kalles 1 byte.<br><br>
+    
+    En byte kan inneholde tallverdier fra 0 til 255.<br><br>
+    
+    En byte brukes ofte til å representere ett tegn fra et tegnsett.<br><br>
+    
+    I starten brukte datamaskiner tegnsettet ASCII som var 7 bit (128 forskjellige tegn)<br><br>
+    
+    Dette ble senere utvida til ANSI (256 tegn)<br><br>
+    
+    Nå bruker vi UTF-8, hvor hvert tegn kan bruke fra 1 til 4 bytes.<br><br>
+    
+    Noen programmer bruker fortsatt eldre tegnsett - slik at vi får problemer når vi publiserer,<br>
+    
+    typisk blir ÆØÅøæå til &#rølp;<br><br>
+    
+     
+    
+    På en nettside må vi bruker < meta charset="UTF-8" > for at vi skal
+    
+    kunne bruke øæå uten problemer.<br> 
+    <br><br><br><br>
+    <b>SRAM og DRAM</b><br><br>
+    
+    DRAM bruker en transistor og en kapasitator til å lagre en bit ( 0 eller 1).<br><br>
+    
+    DRAM trenger stadig oppfrisking (en strømpuls) for å beholde den lagra verdien, men<br><br>
+    
+    fordi DRAM bare bruker en transistor/bit kan DRAM ha større tetthet (bits / mm).<br><br>
+    
+     
+    
+    SRAM bruker 6 transistorer pr bit, men er enklere i drift (beholder verdiene så lenge strømmen er på)<br><br>
+    
+    SRAM brukes mest i cache på CPU eller på små prosessorer som bare har noen kb med minne (slik som arduino). <br><br>
+    
+     
+    
+    Nyere teknologi som kan ta over for disse to er Z-RAM og A-RAM.<br><br>
+    
+     
+    
+    Hierarki av minne i datamaskinen<br><br>
+    
+     
+    
+    |  hastighet<br>
+    
+    | ---------- CPU-register<br><br>
+    
+    |
+    
+    |
+    
+    | -------------------------- SRAM  (cache)<br><br>
+                         
+    |
+    
+    |
+    
+    | ------------------------------- DRAM  (main memory)<br><br>
+    
+    | ----------------------------------------------------------- ssd<br><br>
+    
+    | ---------------------------------------------------------------- harddisk<br><br>
+    
+    -----------------------------------------------------------------------> kapasitet<br><br>
+    
+     
+<img src="ascii.gif"> <br> <br> 
+Bildeformater:
+<br>
+<table>
+    <tr>
+        <td>
+            jpg
+        </td>
+        <td>
+            Et bildeformat, som komprimerer bilder. Det er et bra bilde format for bilder med mange detaljer.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            png
+        </td>
+        <td>
+            Et bildeformat, som gir bilde evnen til å være gjennomsiktig.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            gif
+        </td>
+        <td>
+            Et bilde-/animasjons- format, som har muligheten til å være animert.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            bmp
+        </td>
+        <td>
+            Et bildeformat, er veldig lik png formatet og at opp mye plass
+        </td>
+    </tr>
+    <tr>
+        <td>
+            svg
+        </td>
+        <td>
+            Et bildeformat, som lagrer geometiriske figurer. Nyttig hvis du vil øke resolution.
+        </td>
+    </tr>
+</table>
+    </p>
+<p>
+D.R.A.M står for Dynamic random-access memory. Dette er en type RAM (Korttids minne) du kan endre. Den bruker
+en transitor og ne kapasitator til å lage en bit (0 eller 1) Trenger en kontinuerlig strøm tilgang. for å
+beholde en lagret verdi.
+<br>
+<br> S.R.A.M står for Static random-access memory. Det vil si en type RAM du ikke kan endre på. Bruker 6 transistorer
+pr bit, men er enklere i drift. SRAM bruker mest i cache på CPU eller på små prosessorer.
+<br>
+<br> Z-RAM og A-RAM er nyere type teknologi som kan ta over for S-RAM og D-RAM.<br><br>
+<b>Transistor</b><br>
+En transistor er en elektronisk komponent som brukes sammen med andre elektroniske komponenter til å forsterke eller generere signaler, eller som en bryter for å slå på og av signaler eller energitransport.<br> Den har tre tilkoplinger og er fremstilt av et halvlederkrystall.<br> To av tilkoplingene brukes til å styre strømmen som går gjennom den tredje tilkoplingen og en av styretilkoplingene.<br> Den styrte energien er større enn den som trengs til å styre, noe som gir energetisk forsterkning av et signal.<br> Transistoren brukes både i analoge og i digitale kretser.<br> Transistorer kan finnes som enkeltkomponenter pakket i et hus med tilkoplinger, eller de kan, sammen med ledningsføring og andre komponenter, pakkes tett sammen i et stort antall inne i en funksjonell enhet, kalt en integrert krets.<br>
+
+Den første transistoren ble oppfunnet i 1947 og transistorer ble tilgjengelige fra rundt 1950. Transistoren overtok etterhvert de fleste bruksområder som frem til da hadde vært forbeholdt radiorøret.<br><br>
+
+Betegnelsen transistor er sammensatt av ordene transfer resistor, som antyder en styrbar motstand.<br><br>
+    
+<b>CPU</b><br>
+    En CPU (engelsk forkortelse for Central Processing Unit), også kalt prosessor, er hovedregne-/prosesseringsenheten i en datamaskin som utfører instruksjonene gitt i et dataprogram, og den er det primære elementet som gjennomfører datamaskinens funksjoner.<br> Prosessoren har typisk to logiske bestanddeler: styreenheten og utførelsesenheten.<br> CPU har overordnet ansvar for alt som skal utføres, og delegerer eventuelt oppgaver til andre enheter.<br> Primærlageret inneholder data som skal bearbeides, samt de programmene som for øyeblikket trenger å være hurtig tilgjengelig for prosessoren.<br> Den tar for seg hver instruksjon i programmet i rekkefølge for å utføre systemets grunnleggende aritmetiske, logiske og innmatning-/utmatningsoperasjoner (input/output operations).<br> Dette begrepet har vært i bruk i databransjen siden tidlig på 1960-tallet.<br> Formen, designet og implementeringen av prosessorer har endret seg dramatisk siden de første eksemplarene, men deres grunnleggende operasjon er mye det samme.<br><br>
+    
+    De første prosessorene ble spesielt formet som en del av en større datamaskin, noen ganger den eneste av sitt slag og sin størrelse.<br> Imidlertid har denne kostbare metoden for å designe spesialtilpassede CPUer for en bestemt oppgave i stor grad banet vei for utviklingen av masseproduserte prosessorer som er laget for ett eller flere formål.<br> Denne standardiseringstrenden begynte generelt i tiden med transistor-stormaskiner og minidatamaskiner, og har raskt skutt fart med populariseringen av integrerte kretser fra midt på 1970-tallet.<br> Integrerte kretser har gitt mulighet til å designe og produsere stadig mer komplekse CPUer på nanoskalaen.<br> Både miniatyriseringen og standardiseringen av CPUer har medført økt tilstedeværelse av disse digitale enhetene i moderne liv langt utover den begrensede anvendelsen av dedikerte databehandlingsmaskiner.<br> Moderne mikroprosessorer (med én integrert krets) finnes i alt fra biler og mobiltelefoner til leketøy.<br>
+    <br><b>Chache</b><br>
+A memory cache, sometimes called a cache store or RAM cache, is a portion of memory made of high-speed static RAM (SRAM) instead of the slower and cheaper dynamic RAM (DRAM) used for main memory.<br> Memory caching is effective because most programs access the same data or instructions over and over.
+<br><br><b>EEPROM</b><br>
+EEPROM (also written E2PROM and pronounced "e-e-prom", "double-e-prom" or "e-squared-prom") stands for electrically erasable programmable read-only memory and is a type of non-volatile memory used in computers and other electronic devices to store relatively small amounts of data but allowing individual bytes to be erased and reprogrammed.
+<br><br>
+Most transistors: 32-core AMD Epyc (19,200,000,000 transistors)
+</p>
+</div>
+</body>
+
+
+</html>
