@@ -35,7 +35,7 @@ class Link extends Widgets {
 
 function setup() {
     let main = document.getElementById("main");
-    let files = ["Ant","CircleDetection","Distribution","Primtall-spiral","Solsystem","TravelingSalesman","Trekant-fractal"];
+    let files = ["Ant","CircleDetection","Distribution","Primtall-spiral","Solsystem","TravelingSalesman","Trekant-Fractal"];
     for(let i = 0; i < files.length; i++) {
         let link = new Link(main,files[i],"*");
         link.display();
