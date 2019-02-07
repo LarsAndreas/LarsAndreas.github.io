@@ -48,7 +48,7 @@ h1 {
     color: white;
 }
 
-.link>button, a {
+.link>button{
     position: relative;
     margin: 5px;
     width: 200px;
