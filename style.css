@@ -23,12 +23,14 @@ h1 {
     height: 95vh;
     overflow: scroll;
     margin: 10px;
+
 }
 
 .link {
     position: relative;
     width: 500px;
     height: 50px;
+
     background-color: rgb(67, 0, 130);
     border: 1px solid black;
     border-radius: 1.5%;
@@ -37,6 +39,15 @@ h1 {
     margin-bottom: 5px;
 
     transition-duration: 0.5s;
+
+}
+
+.desc {
+    position: relative;
+    width: 280px;
+    height: 50px;
+
+    display: inline-block;
 }
 
 .link:hover {
@@ -45,7 +56,11 @@ h1 {
 }
 
 .link>span {
+    position: relative;
+    font-size: 0.8em;
     color: white;
+
+    vertical-align: top;
 }
 
 .link>button{
@@ -62,6 +77,8 @@ h1 {
     color: hotpink;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
+
+    vertical-align: top;
 }
 
 .link>button:hover {

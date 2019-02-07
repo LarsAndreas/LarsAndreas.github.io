@@ -27,17 +27,31 @@ class Link extends Widgets {
 
     get div() {
         let div = document.createElement("div");
-    div.innerHTML = `<button onClick="window.location = '${this.link}'"><a href="${this.link}">${this.folder}</a></button><span>${this.description}</span>`;
+        div.innerHTML = `<button onClick="window.location = '${this.link}'"><a href="${this.link}">${this.folder}</a></button><span><div class="desc">${this.description}</div>`;
         div.className = "link";
         return div;
     }
 }
 
+class Links {
+    constructor(json,parent) {
+        this.json = json;
+        this.parent = parent;
+    }
+
+    get Links() {
+        let links = [];
+        this.json.forEach(json=>links.push(new Link(this.parent, json.Folder, json.Description)))
+        return links;
+    }
+
+    showLinks() {
+        this.Links.forEach(link=>link.display());
+    }
+}
+
 function setup() {
     let main = document.getElementById("main");
-    let files = ["Ant","CircleDetection","Distribution","Primtall-spiral","Solsystem","TravelingSalesman","Trekant-Fractal"];
-    for(let i = 0; i < files.length; i++) {
-        let link = new Link(main,files[i],"*");
-        link.display();
-    }
+    let projects = new Links(dataJson, main);
+    projects.showLinks();
 }

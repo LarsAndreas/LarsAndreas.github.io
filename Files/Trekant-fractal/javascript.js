@@ -1,7 +1,5 @@
 //@ts-check
 
-//Barycentric subdivision
-
 function setup() {
     let c = document.getElementById("cube");
     let ctx = c.getContext("2d");
