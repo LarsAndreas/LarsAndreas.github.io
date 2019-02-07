@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+}
+
+body {
+    background: linear-gradient(to right, rgb(15, 12, 41), rgb(48, 43, 99), rgb(36, 36, 62));
+}
+
+#board {
+    background-color: white;
+    border: 1px solid black;
+}

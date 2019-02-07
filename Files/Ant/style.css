@@ -1,0 +1,43 @@
+#myCanvas{
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    float:left;
+}
+#settings,#liste {
+    position: relative;
+    float:left;
+    width: 300px;
+    height: 700px;
+    border: 1px solid black;
+    margin-left: 10px;
+    padding-left: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.67em;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important
+}
+
+#liste{
+    overflow: scroll;
+}
+
+button {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+h1,h2 {
+    color: green;
+}
+a {
+color: hotpink;
+text-decoration: none;
+}
+
+a:hover {
+    color: pink
+}
+
+hr{
+    margin-left: -10px;
+  }
