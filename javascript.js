@@ -22,7 +22,7 @@ class Link extends Widgets {
     }
 
     get link() {
-        return `${this.url.substring(0, this.url.length-"/index.html".length)}/Files/${this.folder}/index.html`;
+        return `${this.url}.github.io/Files/${this.folder}/index.html`;
     }
 
     get div() {
