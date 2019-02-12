@@ -4,4 +4,5 @@ dataJson = [{"Folder" : "Ant", "Description" : "Langtons Ant simulasjon"},
 {"Folder" : "Primtall-spiral", "Description" : "Lager en tallinje som går i en spiral og merker alle primtallene"},
 {"Folder" : "Solsystem", "Description" : "Simulasjon av Solsystemet"},
 {"Folder" : "TravelingSalesman", "Description" : "TravelingSalesman er et problem hvor du skal finne den korteste 'hamiltonian'-veien mellom flere kanter i en graf. (fungerer ikke)"},
-{"Folder" : "Trekant-Fractal", "Description" : "Program som driver barycentric subdivision hvor delingen er på tungdepunktet i trekantene"}];
+{"Folder" : "Trekant-Fractal", "Description" : "Program som driver barycentric subdivision hvor delingen er på tungdepunktet i trekantene"},
+{"Folder" : "Boids", "Description" : "Simulerer hvordan fugler flokker sammen"}];
