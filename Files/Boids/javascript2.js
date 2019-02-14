@@ -81,6 +81,7 @@ function setup() {
          * Finner vinkelen mellom enhetsvektoren i x-rettning og vektoren (this).
          */
         get newAngle() {
+            let calculation = this.calculateAngle(new Vector(1,0));
             return this.calculateAngle(new Vector(1, 0));
         }
     }
@@ -229,7 +230,7 @@ function setup() {
             if (this.vector.newAngle == "zeroVector") {
                 this.pos.x = (this.pos.x + Math.cos(this.prevoiusAngle) * this.velocity + WIDTH) % WIDTH;
                 this.pos.y = (this.pos.y + Math.sin(this.prevoiusAngle) * this.velocity + HEIGHT) % HEIGHT;
-            } {
+            } else {
                 this.pos.x = (this.pos.x + Math.cos((this.vector.newAngle + 999 * this.prevoiusVectorAng)/1000) * this.velocity + WIDTH) % WIDTH;
                 this.pos.y = (this.pos.y + Math.sin((this.vector.newAngle + 999 * this.prevoiusVectorAng)/1000) * this.velocity + HEIGHT) % HEIGHT;
                 this.prevoiusVectorAng = (this.vector.newAngle + 9 * this.prevoiusVectorAng)/10;
