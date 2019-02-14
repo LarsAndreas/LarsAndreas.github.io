@@ -201,7 +201,7 @@ class BoidSwarm {
         for (let i = 0; i < this.amount; i++) {
             let position = new Point(Math.random() * WIDTH, Math.random() * HEIGHT);
             let vector = new Vector(Math.random(), Math.random());
-            boids.push(new Boid(position, vector, 1, 50, this.canvas));
+            boids.push(new Boid(position, vector, 0.5, 50, this.canvas));
         }
     }
 
