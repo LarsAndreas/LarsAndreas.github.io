@@ -5,6 +5,6 @@ dataJson = [{"Folder" : "Ant", "Description" : "Langtons Ant simulasjon"},
 {"Folder" : "Solsystem", "Description" : "Simulasjon av Solsystemet"},
 {"Folder" : "TravelingSalesman", "Description" : "TravelingSalesman er et problem hvor du skal finne den korteste 'hamiltonian'-veien mellom flere kanter i en graf. (fungerer ikke)"},
 {"Folder" : "Trekant-Fractal", "Description" : "Program som driver barycentric subdivision hvor delingen er på tungdepunktet i trekantene"},
-{"Folder" : "Boids", "Description" : "Simulerer hvordan fugler flokker sammen"}],
-{"Folder" : "Tetris", "Description" : "WIP: Tetris med AI"}],
+{"Folder" : "Boids", "Description" : "Simulerer hvordan fugler flokker sammen"},
+{"Folder" : "Tetris", "Description" : "WIP: Tetris med AI"},
 {"Folder" : "idleGame", "Description" : "WIP: Incremental spill som er inspirert av tower of hero"}];
