@@ -50,7 +50,7 @@ function setup() {
         }
 
         /**
-         * 
+         * Lager en Vektor mellom to punkter
          * @param {Point} pointA Startpunktet for ny Vektor
          * @param {Point} pointB Sluttpunktet for ny Vektor
          */
