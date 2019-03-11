@@ -2,18 +2,28 @@
 
 function setup() {
 
+    //Lengden og bredden av canvas-element
     const WIDTH = 1000;
     const HEIGHT = 500;
 
+    //Boids på canvas
     let boids = [];
 
+    //Referanse til canvas-element
     let c = document.getElementById("boidSim");
     let ctx = c.getContext("2d");
 
+    //Endrer bredde og høyde på canvas-element
     c.width = WIDTH;
     c.height = HEIGHT;
 
+
     class Point {
+        /**
+         * Definerer en posisjon på canvas
+         * @param {Number} x posisjon i x-rettning
+         * @param {Number} y posisjon i y-rettning
+         */
         constructor(x, y) {
             this.x = x;
             this.y = y;
@@ -21,19 +31,40 @@ function setup() {
     }
 
     class Vector {
+        /**
+         * En Vektor er en rettning og størrelse.
+         * @param {Number} dx Endring i x-rettning
+         * @param {Number} dy Endring i y-rettning
+         */
         constructor(dx, dy) {
             this.dx = dx;
             this.dy = dy;
         }
 
+        /**
+         * Finner lengden av vektoren
+         * @returns {Number} lengden av Vector
+         */
         get length() {
             return Math.sqrt(this.dx ** 2 + this.dy ** 2);
         }
 
+        /**
+         * 
+         * @param {Point} pointA Startpunktet for ny Vektor
+         * @param {Point} pointB Sluttpunktet for ny Vektor
+         */
         static createVector(pointA, pointB) {
             return new Vector(pointB.x - pointA.x, pointB.y - pointA.y);
         }
 
+        /**
+         * Finner vinkelen mellom to vektorer. 
+         * (hvis ang(this,vector) > 180 vil den returnere -ang(this,vector))
+         * Vi vil ikke alltid ha den minste vinkelen mellom vektorene.
+         * @param {Vector} vector 
+         * @returns {Number} Vinkelen mellom this og vector
+         */
         calculateAngle(vector) {
             if (this.length == 0) {
                 return undefined;
@@ -49,16 +80,30 @@ function setup() {
             }
         }
 
+        /**
+         * Finner vinkelen mellom enhetsvektoren (1,0) og this. (brukes for å finne bevegelses-rettning)
+         * @returns {Number} vinkel mellom this og enhetsvektor (1,0)
+         */
         get unitAngle() {
             let vector = new Vector(1,0);
             return this.calculateAngle(vector);
         }
 
+        /**
+         * Skalerer this med en scalar. (multipliserer lengden med scalar)
+         * Du kan skalere dx og dy hver for seg fordi:
+         * scalar * this.length = scalar * sqrt(dx^2+dy^2) = sqrt((scalar * dx)^2 + (scalar * dy)^2)
+         * @param {Number} scalar 
+         */
         scale(scalar) {
             this.dx *= scalar;
             this.dy *= scalar;
         }
 
+        /**
+         * Adderer vektor til this (this + vector)
+         * @param {Vector} vector Vektoren du adderer med.
+         */
         add(vector) {
             this.dx += vector.dx;
             this.dy += vector.dy;
@@ -66,6 +111,13 @@ function setup() {
     }
 
     class Boid {
+        /**
+         * Boid er en definisjon på en fugel i simulasjonen.
+         * @param {Point} position posisjonen på canvas
+         * @param {Vector} vector rettningsvektor
+         * @param {Number} velocity hastighet (lengden av vektoren)
+         * @param {Number} searchRadius Boids i området som har en innflytelse på this
+         */
         constructor(position, vector, velocity, searchRadius) {
             this.position = position;
             this.vector = vector;
@@ -79,6 +131,7 @@ function setup() {
          * vinkelen "vinkel" fra enhetsvektoren i x-rettning.
          * @param {Number} radius radiusen til sirkelen.
          * @param {Number} vinkel vinkelen fra enhetsvektoren i x-rettning.
+         * @returns {Array} returnerer forskyvet x- og y-posisjon
          */
         addDrawOffset(radius, vinkel) {
             let newX = this.position.x + Math.cos(this.angle + vinkel) * radius;
@@ -88,6 +141,8 @@ function setup() {
 
         /**
          * Tegner en Pilformet-figur på this.pos.
+         * @param {Number} RADIUS Radiusen fra midten av Boid-figuren (Størrelse)
+         * @param {String} color Fargen på Boid-figuren
          */
         drawBoidShape(RADIUS, color) {
             ctx.fillStyle = color;
@@ -102,13 +157,17 @@ function setup() {
         }
 
         /**
-         * Tegner en Pilformet-figur med svart kant på this.pos som skal representere en fugl.
+         * Tegner en rød Pilformet-figur med svart kant på this.pos som skal representere en fugl.
          */
         drawBoid() {
             this.drawBoidShape(11, "black");
             this.drawBoidShape(10, "red");
         }
 
+        /**
+         * Finner alle Boids innenfor this.radius i arrayet boids
+         * @returns {Array} liste over Boids innenfor this.radius
+         */
         get closeBoids() {
             let closeBoids = boids.slice(0);
             let position = this.position;
@@ -122,6 +181,10 @@ function setup() {
             return closeBoids;
         }
 
+        /**
+         * Finner tyngdepunktet på mangekanten som lages av this.closeBoids
+         * Algoritme: finner det aritmetiske-gjennomsnittet av alle x- og y-posisjonene til boids.
+         */
         get uniformMass() {
             let uniformMass = new Point(0, 0);
             this.closeBoids.forEach((boid) => {
@@ -133,6 +196,9 @@ function setup() {
             return uniformMass;
         }
 
+        /**
+         * Finner det aritmetiske-gjennomsnitt for rettningene av alle boids i this.closeBoids
+         */
         get avgDir() {
             let averageDirection = new Vector(0,0);
             this.closeBoids.forEach((boid) => {
@@ -142,6 +208,11 @@ function setup() {
             return averageDirection;
         }
 
+        /**
+         * Finner Vektoren for å komme seg unna andre boids 
+         * (lengden på vektor øker eksponentiselt med lengden fra boid
+         * ,nermere fører til lengre vektor)
+         */
         get seperateBoids() {
             let vectors = [];
             this.closeBoids.forEach((boid) => {
@@ -183,6 +254,10 @@ function setup() {
             }
         }
 
+        /**
+         * Flytter Boid i rettningen 10% av this.vektor sinn rettning.
+         * Hvis det er 100% vil de være veldig "usikker" på hvilke rettning de skal dra.
+         */
         moveBoid() {
             this.vector.angle = this.vector.unitAngle;
             this.position.x = (this.position.x + Math.cos((9*this.angle + this.vector.angle)/10) * this.velocity + WIDTH) % WIDTH;
@@ -190,7 +265,11 @@ function setup() {
             this.angle = (9*this.angle + this.vector.angle)/10;
         }
 
-
+        /**
+         * 1) Oppdaterer vektor basert på boids i nærheten
+         * 2) Beveger Boid i ny rettning
+         * 3) Tegner Boid på canvas
+         */
         update() {
             this.updateVector();
             this.moveBoid();
@@ -199,10 +278,17 @@ function setup() {
     }
 
     class BoidSwarm {
+        /**
+         * Denne klassen definerer en gruppering av Boids
+         * @param {Number} amount Antall Boids
+         */
         constructor(amount) {
             this.amount = amount;
         }
 
+        /**
+         * Lager en Boid med tilfeldig Vektor og Posisjon på sjermen og legger den til arrayet boids
+         */
         createBoids() {
             for (let i = 0; i < this.amount; i++) {
                 let position = new Point(Math.random() * WIDTH, Math.random() * HEIGHT);
@@ -211,6 +297,11 @@ function setup() {
             }
         }
 
+        /**
+         * 1) Tegner sjermen hvit
+         * 2) Oppdaterer Boids på skjerm
+         * 3) Venter på neste frame
+         */
         update() {
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, WIDTH, HEIGHT);
@@ -221,6 +312,7 @@ function setup() {
         }
     }
 
+    //Setup - 100 Boids
     let swarm = new BoidSwarm(100);
     swarm.createBoids();
     window.requestAnimationFrame(() => swarm.update())
