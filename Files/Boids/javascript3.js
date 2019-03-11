@@ -21,8 +21,8 @@ function setup() {
     class Point {
         /**
          * Definerer en posisjon på canvas
-         * @param {Number} x posisjon i x-rettning
-         * @param {Number} y posisjon i y-rettning
+         * @param {Number} x Posisjon i x-rettning
+         * @param {Number} y Posisjon i y-rettning
          */
         constructor(x, y) {
             this.x = x;
@@ -43,7 +43,7 @@ function setup() {
 
         /**
          * Finner lengden av vektoren
-         * @returns {Number} lengden av Vector
+         * @returns {Number} Lengden av Vector
          */
         get length() {
             return Math.sqrt(this.dx ** 2 + this.dy ** 2);
@@ -82,7 +82,7 @@ function setup() {
 
         /**
          * Finner vinkelen mellom enhetsvektoren (1,0) og this. (brukes for å finne bevegelses-rettning)
-         * @returns {Number} vinkel mellom this og enhetsvektor (1,0)
+         * @returns {Number} Vinkel mellom this og enhetsvektor (1,0)
          */
         get unitAngle() {
             let vector = new Vector(1,0);
@@ -113,10 +113,10 @@ function setup() {
     class Boid {
         /**
          * Boid er en definisjon på en fugel i simulasjonen.
-         * @param {Point} position posisjonen på canvas
-         * @param {Vector} vector rettningsvektor
-         * @param {Number} velocity hastighet (lengden av vektoren)
-         * @param {Number} searchRadius Boids i området som har en innflytelse på this
+         * @param {Point} position Posisjonen på canvas
+         * @param {Vector} vector Rettningsvektor
+         * @param {Number} velocity Hastighet (lengden av vektoren)
+         * @param {Number} searchRadius Søkeradius på boids i området som har en innflytelse på this
          */
         constructor(position, vector, velocity, searchRadius) {
             this.position = position;
@@ -129,9 +129,9 @@ function setup() {
         /**
          * Finner et punkt på sirkelen som ligger en avstand |radius| unna this.pos og 
          * vinkelen "vinkel" fra enhetsvektoren i x-rettning.
-         * @param {Number} radius radiusen til sirkelen.
-         * @param {Number} vinkel vinkelen fra enhetsvektoren i x-rettning.
-         * @returns {Array} returnerer forskyvet x- og y-posisjon
+         * @param {Number} radius Radiusen til sirkelen.
+         * @param {Number} vinkel Vinkelen fra enhetsvektoren i x-rettning.
+         * @returns {Array} Returnerer forskyvet x- og y-posisjon
          */
         addDrawOffset(radius, vinkel) {
             let newX = this.position.x + Math.cos(this.angle + vinkel) * radius;
@@ -166,7 +166,7 @@ function setup() {
 
         /**
          * Finner alle Boids innenfor this.radius i arrayet boids
-         * @returns {Array} liste over Boids innenfor this.radius
+         * @returns {Array} Liste over Boids innenfor this.radius
          */
         get closeBoids() {
             let closeBoids = boids.slice(0);
@@ -210,8 +210,7 @@ function setup() {
 
         /**
          * Finner Vektoren for å komme seg unna andre boids 
-         * (lengden på vektor øker eksponentiselt med lengden fra boid
-         * ,nermere fører til lengre vektor)
+         * (Lengden på vektor øker eksponentiselt med lengden fra boid, nermere fører til lengre vektor)
          */
         get seperateBoids() {
             let vectors = [];
@@ -243,7 +242,7 @@ function setup() {
             }
             let vector = new Vector(0,0);
 
-            //skalerer avgDir slik at den har en større betydning.
+            //Skalerer avgDir slik at den har en større betydning.
             avgDir.scale(2);
 
             vector.add(uniformMassVector);
