@@ -352,14 +352,9 @@ function setup() {
     let dt = 0;
     setInterval(() => {
         board.draw();
-        if (dt % 30 == 0) {
+        if (dt % 200 == 0) {
             hand.goDown();
         }
-
-        if (dt % 500 == 132) {
-            hand.rotationFlag = true;
-            hand.tetromino = SRS.NormalRotate(hand.tetromino,"R");
-        } 
         hand.updateGoDirection();
         dt++
     }, 1)
