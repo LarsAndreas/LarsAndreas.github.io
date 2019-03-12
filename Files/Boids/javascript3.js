@@ -297,7 +297,7 @@ function setup() {
         }
 
         /**
-         * 1) Tegner sjermen hvit
+         * 1) Tegner skjermen hvit
          * 2) Oppdaterer Boids på skjerm
          * 3) Venter på neste frame
          */
