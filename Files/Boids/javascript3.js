@@ -60,7 +60,7 @@ function setup() {
 
         /**
          * Finner vinkelen mellom to vektorer. 
-         * (hvis ang(this,vector) > 180 vil den returnere -ang(this,vector))
+         * (hvis this.dy >= 0 vil den returnere -ang(this,vector))
          * Vi vil ikke alltid ha den minste vinkelen mellom vektorene.
          * @param {Vector} vector 
          * @returns {Number} Vinkelen mellom this og vector
@@ -291,7 +291,7 @@ function setup() {
         createBoids() {
             for (let i = 0; i < this.amount; i++) {
                 let position = new Point(Math.random() * WIDTH, Math.random() * HEIGHT);
-                let vector = new Vector(Math.random(), Math.random());
+                let vector = new Vector(Math.random()-0.5, Math.random()-0.5);
                 boids.push(new Boid(position, vector, 0.8, 50));
             }
         }
