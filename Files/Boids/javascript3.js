@@ -134,8 +134,8 @@ function setup() {
          * @returns {Array} Returnerer forskyvet x- og y-posisjon
          */
         addDrawOffset(radius, vinkel) {
-            let newX = this.position.x + Math.cos(this.angle + vinkel) * radius;
-            let newY = this.position.y + Math.sin(this.angle + vinkel) * radius;
+            let newX = this.position.x + Math.cos(this.vector.angle + vinkel) * radius;
+            let newY = this.position.y + Math.sin(this.vector.angle + vinkel) * radius;
             return [newX, newY];
         }
 
@@ -216,7 +216,7 @@ function setup() {
             let vectors = [];
             this.closeBoids.forEach((boid) => {
                 let boidVector = Vector.createVector(boid.position, this.position)
-                boidVector.scale(0.1 ** (boidVector.length - 40));
+                boidVector.scale(5/(boidVector.length + 1));
                 vectors.push(boidVector);
             });
             let seperateVector = new Vector(0, 0);
@@ -234,16 +234,12 @@ function setup() {
          */
         updateVector() {        
             let uniformMassVector = Vector.createVector(this.position, this.uniformMass);
-            uniformMassVector.scale(1/(0.1**(uniformMassVector.length)));
             let seperateBoids = this.seperateBoids;
             let avgDir = this.avgDir;
             if (avgDir.length != 0) {
                 avgDir.scale((uniformMassVector.length + seperateBoids.length)/(2*(avgDir.length)))
             }
             let vector = new Vector(0,0);
-
-            //Skalerer avgDir slik at den har en større betydning.
-            avgDir.scale(2);
 
             vector.add(uniformMassVector);
             vector.add(avgDir);
@@ -258,10 +254,11 @@ function setup() {
          * Hvis det er 100% vil de være veldig "usikker" på hvilke rettning de skal dra.
          */
         moveBoid() {
-            this.vector.angle = this.vector.unitAngle;
-            this.position.x = (this.position.x + Math.cos((9*this.angle + this.vector.angle)/10) * this.velocity + WIDTH) % WIDTH;
-            this.position.y = (this.position.y + Math.sin((9*this.angle + this.vector.angle)/10) * this.velocity + HEIGHT) % HEIGHT;
-            this.angle = (9*this.angle + this.vector.angle)/10;
+            if(Math.abs(this.vector.unitAngle - this.vector.angle) < Math.PI/2) {
+                this.vector.angle = this.vector.unitAngle;
+            }
+            this.position.x = (this.position.x + Math.cos(this.vector.angle) * this.velocity + WIDTH) % WIDTH;
+            this.position.y = (this.position.y + Math.sin(this.vector.angle) * this.velocity + HEIGHT) % HEIGHT;
         }
 
         /**

@@ -27,7 +27,7 @@ class Link extends Widgets {
 
     get div() {
         let div = document.createElement("div");
-        div.innerHTML = `<button onClick="window.location = '${this.link}'"><a href="${this.link}">${this.folder}</a></button><span><div class="desc">${this.description}</div>`;
+        div.innerHTML = `<button onClick="window.location = '${this.link}'"><a href="${this.link}">${this.folder}</a></button><span><div class="box"><div class="desc">${this.description}</div></div>`;
         div.className = "link";
         return div;
     }

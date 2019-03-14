@@ -7,6 +7,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -27,13 +28,39 @@ span {
 }
 
 h1 {
+    background-color: rgb(18, 0, 80);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 40px / 50px;
+    box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 10px rgb(18, 0, 80);
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 3em;
     text-shadow: 0 0 5px white, 0 0 5px rgb(18, 0, 80);
-    text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
+    text-align: center;
+}
+
+b {
+    text-align: center;
+}
+
+.box {
+    position: relative;
+    background-color: rgb(130, 0, 255);
+    box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 5px rgb(18, 0, 80);
+
+    border-radius: 15px 50px 30px 5px;
+    width: 94%;
+    height: 80%;
+    left: 1%;
+    top: 10%;
+    transition-duration: 0.5s;
+}
+
+.link:hover .box {
+    width: 97%;
 }
 
 #mainwrapper {
@@ -45,7 +72,7 @@ h1 {
 }
 
 #main {
-    background-color: rgb(130, 0, 255);;
+    background-color: rgb(130, 0, 255);
     box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 10px rgb(18, 0, 80);
 
     overflow: scroll;
@@ -78,7 +105,8 @@ h1 {
 }
 
 .desc {
-
+    position: relative;
+    top: 10px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -112,7 +140,6 @@ h1 {
     border-radius: 15px / 50px;
 
     color: hotpink;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
 
     vertical-align: top;
