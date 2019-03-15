@@ -239,6 +239,7 @@ function setup() {
             if (avgDir.length != 0) {
                 avgDir.scale((uniformMassVector.length + seperateBoids.length)/(2*(avgDir.length)))
             }
+            
             let vector = new Vector(0,0);
 
             vector.add(uniformMassVector);
