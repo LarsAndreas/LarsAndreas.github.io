@@ -48,6 +48,7 @@ class Mouse {
         this.changeFlag = false;
         this.cellwidth = cellWidth;
         this.addUpdater();
+        this.counter = 0;
     }
 
     updatePosition(e) {
@@ -61,6 +62,24 @@ class Mouse {
         document.addEventListener("mousedown", (event) => {
             this.updatePosition(event);
         });
+    }
+
+    drawOnBoard(board) {
+        skip: {
+            if(this.changeFlag == true) {
+                if(board.board[this.pos.x][this.pos.y] == 0 || board.board[this.pos.x][this.pos.y] == 1) {
+                    this.changeFlag = false;
+                    break skip;
+                }
+                if (this.counter == 0) {
+                    board.board[this.pos.x][this.pos.y] = 0;
+                } else {
+                    board.board[this.pos.x][this.pos.y] = 1;
+                }
+                this.counter = (this.counter + 1) % 2
+                this.changeFlag = false;
+            }
+        }
     }
 }
 
@@ -114,6 +133,11 @@ class Board {
         }
     }
 
+    draw() {
+        this.drawBoardLines();
+        this.drawBoard();
+    }
+
     placeSymbol(x,y,symbol) {
         if(symbol == "x") {
             this.board[x][y] = 1
@@ -144,6 +168,40 @@ class Board {
             this.canvas.ctx.stroke();
         }
     }
+
+    checkGameOver(mouse) {
+        let x = mouse.pos.x;
+        let y = mouse.pos.y;
+        
+        function check(x,y,board,mouse) {
+            let gameover = false;
+            found: {
+                checkdt.forEach(direction => {
+                    let counter = 0;
+                    direction.forEach(dCell => {
+                        let checkX = x + dCell[0];
+                        let checkY = y + dCell[1];
+                        try {
+                            if(board[checkX][checkY] == (mouse.counter + 1) % 2) {
+                                counter++
+                            };
+                        } catch {
+
+                        }
+                        if(counter == 5) {
+                            gameover = true;
+                        }
+                    });
+                });
+            }
+            return gameover;
+        }
+        if(check(x,y,this.board,mouse) == true) {
+            let main = document.getElementById("main");
+            main.innerHTML = "gameOver"
+
+        }
+    }
 }
 
 //https://stackoverflow.com/questions/37103732/optimize-genetic-neural-network-resolving-tic-tac-toe
@@ -154,21 +212,20 @@ function setup() {
     c.show();
     let board = new Board(c,15,15)
     let mouse = new Mouse(c,board.cellWidth);
-    window.requestAnimationFrame(() => update(c,board,mouse,0));
+    window.requestAnimationFrame(() => {
+        update(c,board,mouse)
+    });
 }
 
-function update(canvas, board, mouse, counter) {
-    if(mouse.changeFlag == true) {
-        if (counter == 0) {
-            board.board[mouse.pos.x][mouse.pos.y] = 0;
-        } else {
-            board.board[mouse.pos.x][mouse.pos.y] = 1;
-        }
-        counter = (counter + 1) % 2
-        mouse.changeFlag = false;
+
+function update(canvas, board, mouse) {
+    mouse.drawOnBoard(board);
+    if(mouse.pos != undefined) {
+        board.checkGameOver(mouse);
     }
     canvas.fillWhite();
-    board.drawBoardLines();
-    board.drawBoard();
-    window.requestAnimationFrame(() => update(canvas,board,mouse,counter));
+    board.draw();
+    window.requestAnimationFrame(() => {
+        update(canvas,board,mouse)
+    });
 }
