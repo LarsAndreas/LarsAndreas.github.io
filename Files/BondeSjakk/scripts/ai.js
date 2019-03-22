@@ -1,43 +1,23 @@
 //@ts-check
 
-class Neuron {
-    constructor(id) {
-        this.id = id;
-    }
-}
-
-class Connection {
-    constructor(weight,bias) {
-        this.weight = weight;
-        this.bias = bias;
+class Tiles {
+    constructor(board) {
+        this.board = board;
+        this.valueBoard = this.evaluateTiles(this.board);
     }
 
-    output(input) {
-        return this.weight * input + this.bias;
-    }
-}
+    evaluateTile(x,y,board) {
 
-class NeuralNetwork {
-    constructor(inputsAmount,hiddenAmount,outputAmount) {
-        this.idCounter = 0;
-        this.inputs = this.generateNeuronArray(inputsAmount);
-        this.hiddens = this.generateNeuronArray(hiddenAmount);
-        this.outputs = this.generateNeuronArray(outputAmount);
-
-
-        this.connectionsInpToHid = this.generateConnections(this.inputs,this.hiddens);
     }
 
-    generateNeuronArray(amount) {
-        let array = [];
-        for(let i = 0; i < amount; i++) {
-            array.push(new Neuron(this.idCounter))
-            this.idCounter++
+    evaluateTiles(board) {
+        let width = this.board.length;
+        let height = this.board[0].length;
+        let boardVal = Array(width).fill(0).map(x => Array(height).fill(1));
+        for(let x = 0; x < boardVal.length; x++) {
+            for(let y = 0; y < boardVal.length; y++) {
+                boardVal[x][y] = this.evaluateTile(x,y,this.board);
+            }
         }
-        return array;
-    }
-
-    generateConnections() {
-
     }
 }

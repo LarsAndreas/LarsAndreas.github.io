@@ -48,7 +48,7 @@ b {
 
 .box {
     position: relative;
-    background-color: rgb(130, 0, 255);
+    background-color: rgb(120, 120, 180);
     box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 5px rgb(18, 0, 80);
 
     border-radius: 15px 50px 30px 5px;
@@ -72,7 +72,7 @@ b {
 }
 
 #main {
-    background-color: rgb(130, 0, 255);
+    background-color: rgb(50, 50, 70);
     box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 10px rgb(18, 0, 80);
 
     overflow: scroll;
@@ -92,7 +92,7 @@ b {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    background-color: rgb(18, 0, 80);
+    background-color: rgb(50, 50, 70);
     box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 5px rgb(18, 0, 80);
 
     border-radius: 15px 50px 30px 5px;;
