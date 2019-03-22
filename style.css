@@ -28,15 +28,15 @@ span {
 }
 
 h1 {
-    background-color: rgb(18, 0, 80);
+    background-color: #1A1A59;
     margin: 10px;
     padding: 10px;
     border-radius: 40px / 50px;
-    box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 10px rgb(18, 0, 80);
+    box-shadow: 0 0 10px #565695, 0 0 10px #343477;
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 3em;
-    text-shadow: 0 0 5px white, 0 0 5px rgb(18, 0, 80);
+    text-shadow: 0 0 5px #565695, 0 0 5px #343477;
     margin-top: 20px;
     margin-bottom: 50px;
     text-align: center;
@@ -48,8 +48,8 @@ b {
 
 .box {
     position: relative;
-    background-color: rgb(120, 120, 180);
-    box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 5px rgb(18, 0, 80);
+    background-color: #565695;
+    box-shadow: 0 0 10px #565695, 0 0 5px #343477;
 
     border-radius: 15px 50px 30px 5px;
     width: 94%;
@@ -72,8 +72,8 @@ b {
 }
 
 #main {
-    background-color: rgb(50, 50, 70);
-    box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 10px rgb(18, 0, 80);
+    background-color: #343477;
+    box-shadow: 0 0 10px #565695, 0 0 10px #343477;
 
     overflow: scroll;
     margin: 10px;
@@ -92,8 +92,8 @@ b {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    background-color: rgb(50, 50, 70);
-    box-shadow: 0 0 10px rgb(130, 0, 255), 0 0 5px rgb(18, 0, 80);
+    background-color: #343477;
+    box-shadow: 0 0 10px #565695, 0 0 5px #343477;
 
     border-radius: 15px 50px 30px 5px;;
 
@@ -113,8 +113,8 @@ b {
 
 .link:hover {
     transform: scale(1.03);
-    background-color: rgb(18, 0, 80);
-    box-shadow: 0 0 30px rgb(130, 0, 255), 0 0 40px rgb(18, 0, 80);
+    background-color: #343477;
+    box-shadow: 0 0 30px #565695, 0 0 40px #343477;
 }
 
 .link>span {
@@ -135,7 +135,7 @@ b {
     grid-row-start: 1;
     grid-row-end: 1;
 
-    background-color: rgb(70, 70, 70);
+    background-color: #2D8633;
     border: 1px solid rgb(58, 58, 58);
     border-radius: 15px / 50px;
 
@@ -147,5 +147,5 @@ b {
 
 .link>button:hover {
     color: pink;
-    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgb(50, 50, 70), 0 0 20px #343477;
 }
