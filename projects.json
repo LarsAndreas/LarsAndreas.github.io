@@ -8,4 +8,6 @@ dataJson = [{"Folder" : "Ant", "Description" : "Langtons Ant simulasjon"},
 {"Folder" : "Boids", "Description" : "Simulerer hvordan fugler flokker sammen"},
 {"Folder" : "BondeSjakk", "Description" : "BondeSjakk spill (AI WIP)"},
 {"Folder" : "Tetris", "Description" : "WIP: Tetris med AI"},
+{"Folder" : "CircleBlend", "Description" : "Viser en myk-sammenfletting av sirkler"},
+{"Folder" : "Pandigital multiples", "Description" : "Løsning til https://projecteuler.net/problem=38"},
 {"Folder" : "idleGame", "Description" : "WIP: Incremental spill som er inspirert av tower of hero"}];

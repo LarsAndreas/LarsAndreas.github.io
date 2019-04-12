@@ -1,0 +1,31 @@
+#images {
+    position: absolute;
+}
+
+#Roma {
+    position: absolute;
+    top: 0;
+    left: 323px;
+    width: 375px;
+    height: 498px;
+}
+
+#St-Petersburg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 323px;
+    height: 243px;
+}
+
+#NewYork {
+    position: absolute;
+    top: 243px;
+    left: 0;
+    width: 380px;
+    height: 256px;
+}
+
+.test {
+    border: 1px solid red;
+}
